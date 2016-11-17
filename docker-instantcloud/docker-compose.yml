@@ -1,0 +1,36 @@
+version: '2'
+
+volumes:
+  db-instantcloud: {}
+
+services:
+
+  db-instantcloud:
+    image: postgres:9.6
+    restart: always
+    environment:
+      POSTGRES_USER: instantcloud
+      POSTGRES_PASSWORD: instantcloud
+      POSTGRES_DB: instantcloud
+    volumes:
+      - db-instantcloud:/var/lib/postgresql/data
+
+  instantcloud:
+    build: ./instantcloud
+    restart: always
+    depends_on:
+      - db-instantcloud
+    volumes:
+      - ./config:/srv/instantcloud/config
+
+  instantcloud-cleaner:
+    build: ./instantcloud
+    command: cron -f
+    restart: always
+    depends_on:
+      - db-instantcloud
+    volumes:
+      - ./config:/srv/instantcloud/config
+
+
+

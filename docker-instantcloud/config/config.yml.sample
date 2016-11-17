@@ -1,0 +1,31 @@
+twitter:
+    consumer_key: ""
+    consumer_secret: ""
+    access_token: ""
+    access_token_secret: ""
+    passphrase: "Give me a server"
+    username: ""
+db:
+    host: "dbinstantcloud"
+    port: "5432"
+    user: "instantcloud"
+    password: "instantcloud"
+    dbname: "instantcloud"
+    ssl_mode: "disable"
+scw:
+    access_key: ""
+    secret_key: ""
+    instance_type: "VC1S"
+    region: "ams1"
+    session_time: 15
+    image_id: ""
+    limit: 0
+
+messages:
+    busy: "all cloud servers are busy, please retry in few minutes 😱"
+    follow_me: "you need to follow me first so I can DM you. 😊"
+    starting_in_progress: "your server is starting, I'll DM you in a few seconds 👍"
+    already_have_session: "you already have a sever, I can't give you a new one 😢"
+    server_ready: "your server is up and running. Enjoy 🚀"
+    dm_server_ready: "Enjoy your 15 minutes free server. 🚀 Password is:"
+
