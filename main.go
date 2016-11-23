@@ -430,7 +430,7 @@ func MonitorTwitterStream(twitterClient *twitter.Client, appConfig *AppConfig) {
 	}
 
 	demux.Tweet = func(tweet *twitter.Tweet) {
-		if res := strings.Contains(tweet.Text, appConfig.Twitter.Passphrase); res {
+		if res := strings.Contains(strings.ToLower(tweet.Text), appConfig.Twitter.Passphrase); res {
 			log.WithFields(logrus.Fields{
 				"twitter ID": tweet.User.ID,
 				"tweet":      tweet.Text,
